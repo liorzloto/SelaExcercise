@@ -1,0 +1,17 @@
+﻿I was not sure what exactly the bonus had to do, so this is how I interpreted it:
+
+1.  The user inputs two cities: A and B.
+2.  Then, for each city (call it C) other than A and B, find all valid one-stop connection flights from A to B through
+	C. A valid one-stop connection flight contains a flight from A to C and a flight from C to B.
+3.  Calculate the average arrival delay over the one-stop connection flights from A to B, for each city C (for each
+	one-stop connection flight, its arrival delay is the arrival delay of the second flight from C to B).
+4.  Return the one-stop connection flight with the minimal average arrival delay (which is made of cities A and B,
+	and the city with the minimal average arrival delay that connects them).
+
+I also had to decide what a valid one-stop connection is. So I decided that it is every two flights from city to A
+to city C and from city C to city B such that:
+
+1.  The actual arrival time (planned arrival time + arrival delay) of the flight from city A to city C is at least an
+	hour before the planned departure time of the flight from city C to city B.
+2.	The planned arrival time of the flight from city A to city C is not 24 hours or more before the planned departure
+	time of the flight from city C to city B.
